@@ -117,13 +117,14 @@ passing_reading = school_data_complete_df[school_data_complete_df["reading_score
 passing_reading.head()
 
 # %%
-# Calculate the number of students passing math.
+# Calculate the number of students passing.
 passing_math_count = passing_math["student_name"].count()
-print(passing_math["student_name"].count())
+print("Math:    " + str(passing_math["student_name"].count()))
 
 # Calculate the number of students passing reading.
 passing_reading_count = passing_reading["student_name"].count()
-print(passing_reading["student_name"].count())
+print("Reading: " + str(passing_reading["student_name"].count()))
+
 
 #%%
 # Calculate the percent that passed math.
@@ -256,18 +257,7 @@ per_school_passing_math = school_data_complete_df[(school_data_complete_df["math
 per_school_passing_reading = school_data_complete_df[(school_data_complete_df["reading_score"] >= 70)]
 
 #%%
-# Calculate the number of students passing math and passing reading by school.
-# per_school_passing_math2 = per_school_passing_math
-# print("Math passing per school")
-# math_passing_per_school = per_school_passing_math2.groupby(["school_name"]).count()["student_name"]
-# print(math_passing_per_school)
-# print("")
-# print("Reading passing per school")
-# per_school_passing_reading2 = per_school_passing_reading
-# reading_passing_per_school = per_school_passing_reading2.groupby(["school_name"]).count()["student_name"]
-# print(reading_passing_per_school)
-
-# Calculate the number of students passing math and passing reading by school.
+## Calculate the number of students passing math and passing reading by school.
 per_school_passing_math = per_school_passing_math.groupby(["school_name"]).count()["student_name"]
 
 per_school_passing_reading = per_school_passing_reading.groupby(["school_name"]).count()["student_name"]
